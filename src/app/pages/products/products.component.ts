@@ -17,16 +17,13 @@ export class ProductsComponent {
 
   columns = [
     { field: 'id', header: 'ID' },
-    { field: 'title', header: 'title' },
+    { field: 'title', header: 'Title' },
     { field: 'description', header: 'Description' },
-    { field: 'category', header: 'Category' },
+    { field: 'category', header: 'Category'},
     { field: 'price', header: 'Price(USD)' },
     { field: 'image', header: 'Image' },
-
-
   ];
   constructor(private productsService: ProductsService) {
-    // Initialization logic can go here
   }
 
   ngOnInit() {
@@ -59,7 +56,7 @@ export class ProductsComponent {
   }
 
   toggleExpand(event: Event): void {
-    event.preventDefault(); // prevent anchor default
+    event.preventDefault();
     this.isExpanded = !this.isExpanded;
   }
 

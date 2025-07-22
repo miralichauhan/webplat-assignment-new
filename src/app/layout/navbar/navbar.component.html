@@ -1,77 +1,81 @@
 <div class="d-flex min-vh-100">
-    <aside class="sidebar">
-        <!-- Logo and App Name -->
-        <div class="d-flex align-items-center mb-4 px-3 py-2">
-            <img src="assets/logo.svg" alt="Logo" class="rounded-circle me-3">
+    <!-- Sidebar -->
+    <aside class="sidebar d-flex flex-column text-center">
+        <div class="logo mb-4">
+            <img src="assets/logo.svg" alt="Logo" class="img-fluid logo-img">
         </div>
 
-        <!-- Navigation Links -->
-        <nav class="flex-grow-1">
+        <nav>
             <ul class="nav flex-column">
-                <li class="nav-item mb-2">
+                <li class="nav-item">
                     <a routerLink="/profile" routerLinkActive="active-link" class="nav-link"
-                        [routerLinkActiveOptions]="{ exact: true }">
-                        Dashboard
-                    </a>
+                        [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
                 </li>
-                <li class="nav-item mb-2">
+                <li class="nav-item">
                     <a routerLink="/users" routerLinkActive="active-link" class="nav-link"
-                        [routerLinkActiveOptions]="{ exact: true }">
-                        User Page
-                    </a>
+                        [routerLinkActiveOptions]="{ exact: true }">Users Page</a>
                 </li>
-                <li class="nav-item mb-2">
+                <li class="nav-item">
                     <a routerLink="/products" routerLinkActive="active-link" class="nav-link"
-                        [routerLinkActiveOptions]="{ exact: true }">
-                        Product Page
-                    </a>
+                        [routerLinkActiveOptions]="{ exact: true }">Product Page</a>
                 </li>
             </ul>
         </nav>
 
-        <!-- Bottom Links -->
-        <div class="mt-auto bottom-links">
+        <div class="mt-auto bottom-links px-3">
             <ul class="nav flex-column">
-                <li class="nav-item mb-2">
-                    <a class="nav-link" (click)="$event.preventDefault();">
-                        Setting
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
+                        <img src="assets/settings.svg" alt="Setting" width="20" height="20" />
+                        <span>Setting</span>
                     </a>
                 </li>
-                <li class="nav-item mb-2">
-                    <a class="nav-link" (click)="$event.preventDefault();">
-                        Help
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
+                        <img src="assets/help.svg" alt="Help" width="20" height="20"/>
+                        <span>Help</span>
                     </a>
                 </li>
-                <li class="nav-item mb-2">
-                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutModal">
-                        Logout
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#" data-bs-toggle="modal"
+                        data-bs-target="#logoutModal">
+                        <img src="assets/logout.svg" alt="Logout" width="20" height="20" />
+                        <span>Logout</span>
                     </a>
                 </li>
             </ul>
+
         </div>
     </aside>
 
-    <!-- Main Content Area -->
-    <div class="main-content">
-        <!-- Header -->
+    <!-- Main Content -->
+    <div class="main-content flex-grow-1">
         <app-header [title]="currentPageTitle"></app-header>
         <router-outlet></router-outlet>
     </div>
 </div>
 
-<!-- Logout Modal -->
+
+<!-- Logout Confirmation Modal -->
 <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content border-0 rounded-4 overflow-hidden text-center">
+
+            <div class="bg-lightblue p-4 position-relative">
+                <div class="icon-circle bg-danger d-flex justify-content-center align-items-center mx-auto mb-n4">
+                    <i class="bi bi-trash-fill text-white fs-2"></i>
+                </div>
             </div>
-            <div class="modal-body">
-                Are you sure?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+
+            <div class="modal-body pt-5">
+                <h5 class="fw-bold mb-2">Are you sure !</h5>
+                <p class="text-muted px-3">
+                    Lorem Ipsum” is a placeholder text commonly <br />used in the printing and publishing
+                </p>
+
+                <button type="button" class="btn btn-logout mt-3" (click)="logout()">
+                    Log Out
+                </button>
             </div>
         </div>
     </div>

@@ -2,11 +2,11 @@
     max-height: 400px;
     overflow-y: auto;
 }
-
-thead.custom-thead {
-    background-color: black;
-    color: #000;
+.table thead th {
+  background: rgba(244, 244, 244, 1);
+  color: rgb(0, 0, 0) !important;
 }
+
 .expand-less-more{
     color: #000;
     font-weight: 400;

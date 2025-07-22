@@ -18,11 +18,11 @@ export class UsersComponent {
   }
   columns = [
     { field: 'id', header: 'ID' },
-    { field: 'firstname', header: 'First Name' },
-    { field: 'lastname', header: 'Last Name' },
+    { field: 'firstname', header: 'First Name',width: '110px' },
+    { field: 'lastname', header: 'Last Name',width: '110px' },
     { field: 'gender', header: 'Gender' },
     { field: 'email', header: 'Email' },
-    { field: 'phoneNumber', header: 'Phone Number' },
+    { field: 'phoneNumber', header: 'Phone',width: '110px' },
     { field: 'birthdate', header: 'Birthdate' },
     { field: 'image', header: 'Image' },
     { field: 'edit', header: 'Edit', type: 'button' },

@@ -12,7 +12,7 @@ export class ProfileComponent {
   ngOnInit() {
     this.getUserDetails();
   }
-  
+
   getUserDetails() {
     this.authService.getUserDetails().subscribe({
       next: (response) => {

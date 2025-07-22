@@ -1,27 +1,56 @@
-# WebplatAssignment
+# 🚀 WebplatAssignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+This project is an **Angular 15** application built using [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
 
-## Development server
+It demonstrates:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Token-based authentication
+- Protected routing with Auth Guard
+- Global error handling using HTTP Interceptor
+- UI styled with **Bootstrap 5**
+- Toast notifications via **ngx-toastr**
+- Feature pages: **Dashboard**, **Users**, **Products**
+- Fully implemented **Logout** functionality
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📦 Tech Stack
 
-## Build
+- **Angular 15**
+- **Bootstrap 5**
+- **ngx-toastr**
+- **RxJS**
+- **LocalStorage** (for token-based auth)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🧪 Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### ✅ Auth & Routing
+- Routes like `/profile`, `/users`, and `/products` are protected using `AuthGuard`
+- Navigating to `/login` clears any existing token
+- Already logged-in users visiting `/login` or `/` are redirected to `/profile`
 
-## Running end-to-end tests
+### ✅ Token & Error Handling
+- HTTP Interceptor adds `Authorization` header to all outgoing requests
+- On receiving `401 Unauthorized`, user is logged out and redirected to `/login`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### ✅ UI & Notifications
+- Styled using Bootstrap
+- Uses ngx-toastr for showing success/error toasts
 
-## Further help
+---
+## 🧰 Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1. Clone the repository
+
+```bash
+git clone <repo-url>
+cd WebplatAssignment
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```

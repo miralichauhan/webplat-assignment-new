@@ -1,14 +1,14 @@
 <div
-    class="relative w-full max-w-4xl bg-[#2a9fd6] text-black rounded-2xl shadow-xl overflow-hidden p-6 md:p-8 card-bg-pattern">
+    class="relative w-full justify-content-between align-items-center mt-4 px-4 py-2 header-bar shadow-sm"  [ngStyle]="{ 'border-radius': '30px' }">
     <div class="mb-4">
-        <input type="search" class="form-control mb-3" placeholder="Search..." [formControl]="searchText" />
+        <input type="search" class="form-control mb-4 mt-4" placeholder="Search..." [formControl]="searchText" />
     </div>
 
     <div class="table-body">
-    <table class="table">
-        <thead class="bg-dark text-white">
+        <table class="table">
+            <thead class="custom-thead text-white">
             <tr>
-                <th *ngFor="let col of columns">{{ col.header }}</th>
+                <th *ngFor="let col of columns"   [ngStyle]="{ width: col.width }">{{ col.header }}</th>
             </tr>
         </thead>
         <tbody *ngIf="filteredUsers?.length > 0">
