@@ -25,13 +25,13 @@
         <div class="mt-auto bottom-links px-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2 text-dark" (click)="$event.preventDefault()">
                         <img src="assets/settings.svg" alt="Setting" width="20" height="20" />
                         <span>Setting</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2 text-dark" (click)="$event.preventDefault()">
                         <img src="assets/help.svg" alt="Help" width="20" height="20"/>
                         <span>Help</span>
                     </a>
