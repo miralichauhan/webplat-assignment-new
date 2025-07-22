@@ -1,0 +1,58 @@
+<div
+    class="relative w-full max-w-4xl bg-[#2a9fd6] text-black rounded-2xl shadow-xl overflow-hidden p-6 md:p-8 card-bg-pattern">
+    <div class="mb-4">
+        <input type="search" class="form-control mb-3" placeholder="Search..." [formControl]="searchText" />
+    </div>
+
+    <div class="table-body">
+    <table class="table">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th *ngFor="let col of columns">{{ col.header }}</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="filteredUsers?.length > 0">
+            <tr *ngFor="let user of filteredUsers">
+                <td>
+                    {{ user?.id }}
+                </td>
+                <td>
+                    {{ user?.firstName }}
+                </td>
+                <td>
+                    {{ user?.lastName }}
+                </td>
+                <td>
+                    {{ user?.gender }}
+                </td>
+                <td>
+                    {{ user?.email }}
+                </td>
+                <td>
+                    {{ user?.phone }}
+                </td>
+                <td>
+                    {{ user?.birthDate | date:'MM/dd/yyyy' }}
+                </td>
+                <td>
+                   <img src="assets/username.svg" alt="..." class="img-thumbnail">
+                </td>
+                <td>
+                    <button class="btn edit-btn">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-details">View Details</button>
+                </td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="10" class="text-center" *ngIf="filteredUsers?.length === 0">
+                    No users found.
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+</div>

@@ -1,0 +1,10 @@
+<div
+    class="relative w-full max-w-4xl bg-[#2a9fd6] text-black rounded-2xl shadow-xl overflow-hidden p-6 md:p-8 card-bg-pattern">
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+        <span>WELCOME, {{userData?.firstName}} {{userData?.lastName}}</span>
+        <div class="flex-grow">
+            <span>Email</span>
+            <p class="text-sm text-gray-200">{{ userData?.email }}</p>
+        </div>
+    </div>
+</div>

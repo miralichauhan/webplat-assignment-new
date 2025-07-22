@@ -1,0 +1,64 @@
+<div
+    class="relative w-full max-w-4xl bg-[#2a9fd6] text-black rounded-2xl shadow-xl overflow-hidden p-6 md:p-8 card-bg-pattern">
+    <div class="mb-4">
+        <input type="search" class="form-control mb-3" placeholder="Search..." [formControl]="searchText" />
+    </div>
+
+    <div class="table-body">
+        <table class="table">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th *ngFor="let col of columns" (click)="col.field === 'price' && sortByPrice()"
+                        style="cursor: pointer;">
+                        {{ col.header }}
+                        <ng-container *ngIf="col.field === 'price'">
+                            <i *ngIf="priceSortOrder === 'asc'" class="bi bi-sort-down-alt ms-2"></i>
+                            <i *ngIf="priceSortOrder === 'desc'" class="bi bi-sort-up ms-2"></i>
+                            <i *ngIf="priceSortOrder === null" class="bi bi-arrow-down-up ms-2"></i>
+                        </ng-container>
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngIf="filteredProducts?.length > 0">
+                <tr *ngFor="let product of filteredProducts">
+                    <td>
+                        {{ product?.id }}
+                    </td>
+                    <td>
+                        {{ product?.title }}
+                    </td>
+                    <td>
+                        <span>
+                            {{ isExpanded ? product.description : (product.description | slice:0:50) + '...' }}
+                        </span>
+                        <a class="expand-less-more" href="#" (click)="toggleExpand($event)">
+                            {{ isExpanded ? 'View Less' : 'View More' }}
+                        </a>
+                    </td>
+
+                    <td>
+                        {{ product?.category }}
+                    </td>
+                    <td>
+                        ${{ product?.price }}
+                    </td>
+                    <td>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <img *ngFor="let img of product?.images" [src]="img" alt="{{ product?.title }}" width="50"
+                                height="50">
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="10" class="text-center" *ngIf="filteredProducts?.length === 0">
+                        No products found.
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

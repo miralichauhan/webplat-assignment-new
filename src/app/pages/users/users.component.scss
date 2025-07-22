@@ -1,0 +1,15 @@
+.table-body{
+     max-height: 400px;
+  overflow-y: auto;
+}
+thead.custom-thead {
+  background-color: black; 
+  color: #000;
+}
+.edit-btn{
+    background-color: rgba(255, 193, 7, 1) !important;
+    border-radius: 9.24px;
+    width: 64px;
+    height: 21.33px;
+    padding: 0px;
+}

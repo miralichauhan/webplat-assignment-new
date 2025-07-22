@@ -1,0 +1,78 @@
+<div class="d-flex min-vh-100">
+    <aside class="sidebar">
+        <!-- Logo and App Name -->
+        <div class="d-flex align-items-center mb-4 px-3 py-2">
+            <img src="assets/logo.svg" alt="Logo" class="rounded-circle me-3">
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex-grow-1">
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a routerLink="/profile" routerLinkActive="active-link" class="nav-link"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a routerLink="/users" routerLinkActive="active-link" class="nav-link"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        User Page
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a routerLink="/products" routerLinkActive="active-link" class="nav-link"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        Product Page
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Bottom Links -->
+        <div class="mt-auto bottom-links">
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a class="nav-link" (click)="$event.preventDefault();">
+                        Setting
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link" (click)="$event.preventDefault();">
+                        Help
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Header -->
+        <app-header [title]="currentPageTitle"></app-header>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- Logout Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>

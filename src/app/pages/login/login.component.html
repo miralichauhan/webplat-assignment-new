@@ -1,0 +1,52 @@
+<div class="flex flex-col items-center w-full max-w-md">
+    <div class="w-full p-6 bg-white rounded-lg shadow-md">
+        <!-- Logo Section -->
+        <div class="text-center mb-4">
+            <img src="assets/logo.svg" alt="Logo" class="w-20 h-20 rounded-full shadow-md">
+        </div>
+        <!-- Login Card -->
+         <form action="" class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="bg-white p-8  shadow-lg custom-card">
+            <h2 class="text-2xl font-semibold text-gray-800 text-center mb-2">WELCOME BACK</h2>
+            <p class="text-gray-500 text-center mb-6 text-sm">Please login to your account</p>
+
+            <div class="form-group mb-4 position-relative">
+                <div class="d-flex align-items-center border-bottom pb-2">
+                    <img src="assets/username.svg" alt="Username Icon" class="me-2">
+                    <input type="text" id="username" name="username" class="form-control border-0 p-0 shadow-none"
+                        placeholder="USERNAME" formControlName="username" required/>
+                </div>
+            </div>
+            <div class="form-group mb-4 position-relative">
+                <div class="d-flex align-items-center border-bottom pb-2">
+                    <img src="assets/lock-profile.svg" alt="Password Icon" class="me-2">
+                    <input type="password" id="password" name="password" class="form-control border-0 p-0 shadow-none"
+                        placeholder="PASSWORD" formControlName="password"required/>
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <div class="d-flex justify-content-between align-items-center pb-2">
+                    <div class="d-flex align-items-center">
+                        <input type="checkbox" id="remember-me" name="rememberMe" class="remember-me-checkbox" />
+                        <label for="remember-me" class="ms-2 text-sm text-dark mb-0">Remember Me</label>
+                    </div>
+                    <a href="#" class="text-sm text-link text-decoration-none">Forgot password?</a>
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-submit"> <img src="assets/login.svg"
+                            alt="Login Icon" class="me-2">
+                        <span>LOGIN</span></button>
+                        
+                </div>
+                  <div class="form-group mb-4">
+                <p class="text-center">
+            Don't have an account? <a href="#" class="text-red-500 hover:underline font-medium">Sign up.</a>
+        </p>
+        </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
